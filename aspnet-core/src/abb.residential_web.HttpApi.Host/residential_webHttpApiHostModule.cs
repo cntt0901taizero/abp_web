@@ -109,6 +109,7 @@ public class residential_webHttpApiHostModule : AbpModule
 
     private static void ConfigureSwaggerServices(ServiceConfigurationContext context, IConfiguration configuration)
     {
+        // 1. with auth
         context.Services.AddAbpSwaggerGenWithOAuth(
             configuration["AuthServer:Authority"],
             new Dictionary<string, string>
@@ -121,6 +122,17 @@ public class residential_webHttpApiHostModule : AbpModule
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
             });
+
+        //// 2. with no auth
+        //var services = context.Services;
+        //services.AddAbpSwaggerGen(
+        //    options =>
+        //    {
+        //        options.SwaggerDoc("v1", new OpenApiInfo { Title = "AbpAiProject API", Version = "v1" });
+        //        options.DocInclusionPredicate((docName, description) => true);
+        //        options.CustomSchemaIds(type => type.FullName);
+        //    }
+        //);
     }
 
     private void ConfigureDataProtection(
@@ -152,6 +164,12 @@ public class residential_webHttpApiHostModule : AbpModule
     {
         context.Services.AddCors(options =>
         {
+            //options.AddPolicy("AllowOrigin", options =>
+            //    options.AllowAnyOrigin()
+            //    .AllowAnyMethod()
+            //    .AllowAnyHeader()
+            //);
+
             options.AddDefaultPolicy(builder =>
             {
                 builder

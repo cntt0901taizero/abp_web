@@ -43,7 +43,8 @@ public class residential_webDomainSharedModule : AbpModule
         Configure<AbpLocalizationOptions>(options =>
         {
             options.Resources
-                .Add<residential_webResource>("en")
+                /*.Add<residential_webResource>("en")*/
+                .Add<residential_webResource>("vi")
                 .AddBaseTypes(typeof(AbpValidationResource))
                 .AddVirtualJson("/Localization/residential_web");
 

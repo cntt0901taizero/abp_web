@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Account;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -27,5 +28,8 @@ public class residential_webApplicationModule : AbpModule
         {
             options.AddMaps<residential_webApplicationModule>();
         });
+        /*// Cấu hình MediatR
+        context.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+        context.Services.AddMediatR(typeof(AbpAiProjectApplicationModule).GetTypeInfo().Assembly);*/
     }
 }

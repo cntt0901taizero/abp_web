@@ -3,6 +3,41 @@
   "texts": {
     "Menu:Home": "Home",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+
+    // residential_webSS
+    "Menu:residential_web": "Quản lý Cư dân & Căn hộ",
+    "Permission:residential_web": "Quản lý Cư dân & Căn hộ",
+
+    "Menu:BlockHouses": "Quản lý Dự án bất động sản",
+    "Permission:BlockHouses": "Quản lý Dự án bất động sản",
+
+    "Menu:BlockHouse": "Dự án",
+    "Permission:BlockHouse": "Dự án",
+    "Permission:BlockHouse.View": "Xem",
+    "Permission:BlockHouse.Create": "Tạo mới",
+    "Permission:BlockHouse.Update": "Sửa",
+    "Permission:BlockHouse.Delete": "Xóa",
+
+    "Menu:Building": "Khu / Tòa nhà",
+    "Permission:Building": "Khu / Tòa nhà",
+    "Permission:Building.View": "Xem",
+    "Permission:Building.Create": "Tạo mới",
+    "Permission:Building.Update": "Sửa",
+    "Permission:Building.Delete": "Xóa",
+
+    "Menu:BuildingFloors": "Tầng / Sàn",
+    "Permission:BuildingFloors": "Tầng / Sàn",
+    "Permission:BuildingFloors.View": "Xem",
+    "Permission:BuildingFloors.Create": "Tạo mới",
+    "Permission:BuildingFloors.Update": "Sửa",
+    "Permission:BuildingFloors.Delete": "Xóa",
+
+    "Menu:BuildingHouses": "Căn hộ / Biệt thự",
+    "Permission:BuildingHouses": "Căn hộ / Biệt thự",
+    "Permission:BuildingHouses.View": "Xem",
+    "Permission:BuildingHouses.Create": "Tạo mới",
+    "Permission:BuildingHouses.Update": "Sửa",
+    "Permission:BuildingHouses.Delete": "Xóa"
   }
 }

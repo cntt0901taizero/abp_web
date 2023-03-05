@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using abb.residential_web.DataEntity;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -52,6 +54,15 @@ public class residential_webDbContext :
 
     #endregion
 
+    #region MyRegion
+
+    public DbSet<BlockHouseEntity> BlockHouseEntity { get; set; }
+    public DbSet<BuildingEntity> BuildingEntity { get; set; }
+    public DbSet<BuildingFloorsEntity> BuildingFloorsEntity { get; set; }
+    public DbSet<BuildingHousesEntity> BuildingHousesEntity { get; set; }
+
+    #endregion
+
     public residential_webDbContext(DbContextOptions<residential_webDbContext> options)
         : base(options)
     {
@@ -81,5 +92,35 @@ public class residential_webDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+
+        builder.Entity<BlockHouseEntity>(b =>
+        {
+            b.ToTable(residential_webConsts.DbTablePrefix + "BlockHouseEntity",
+                residential_webConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            //b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+        });
+        builder.Entity<BuildingEntity>(b =>
+        {
+            b.ToTable(residential_webConsts.DbTablePrefix + "BuildingEntity",
+                residential_webConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            //b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+        });
+        builder.Entity<BuildingFloorsEntity>(b =>
+        {
+            b.ToTable(residential_webConsts.DbTablePrefix + "BuildingFloorsEntity",
+                residential_webConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            //b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+        });
+        builder.Entity<BuildingHousesEntity>(b =>
+        {
+            b.ToTable(residential_webConsts.DbTablePrefix + "BuildingHousesEntity",
+                residential_webConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            //b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+        });
+
     }
 }
