@@ -10,7 +10,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace abb.residential_web.DataEntity
 {
-    [Table(name: "tb_block_house")]
+    [Table(name: "TbBlockHouse")]
     public class BlockHouseEntity : AuditedAggregateRoot<long>
     {
         [Required]

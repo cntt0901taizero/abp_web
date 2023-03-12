@@ -11,7 +11,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace abb.residential_web.DataEntity
 {
-    [Table(name: "tb_building_houses")]
+    [Table(name: "TbBuildingHouses")]
     public class BuildingHousesEntity : AuditedAggregateRoot<long>
     {
         [Required]

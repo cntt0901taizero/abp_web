@@ -13,8 +13,16 @@ public class residential_webApplicationAutoMapperProfile : Profile
          * into multiple profile classes for a better organization. */
 
         CreateMap<BlockHouseEntity, BlockHouseDto>().ReverseMap();
+        CreateMap<CruBlockHouseDto, BlockHouseEntity>().ReverseMap();
+
         CreateMap<BuildingEntity, BuildingDto>().ReverseMap();
+        CreateMap<CruBuildingDto, BuildingEntity>().ReverseMap();
+
         CreateMap<BuildingFloorsEntity, BuildingFloorsDto>().ReverseMap();
+        CreateMap<CruBuildingFloorsDto, BuildingFloorsEntity>().ReverseMap();
+
         CreateMap<BuildingHousesEntity, BuildingHousesDto>().ReverseMap();
+        CreateMap<CruBuildingHousesDto, BuildingHousesEntity>().ReverseMap();
     }
+
 }
